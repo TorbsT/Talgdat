@@ -4,6 +4,7 @@ using System;
 
 public class IntList
 {
+    public List<SetIndexToValueCommand> commands { get => _commands; }
     public int arrayAccesses { get => _arrayAccesses; }
     public int swaps { get => _swaps; }
     public int this[int index]
@@ -15,12 +16,14 @@ public class IntList
     public int Count { get => _elements.Count; }
 
     private List<int> _elements;
+    private List<SetIndexToValueCommand> _commands;
     private int _arrayAccesses;
     private int _swaps;
 
     public IntList()
     {
         _elements = new List<int>();
+        _commands = new List<SetIndexToValueCommand>();
     }
     public void Swap(int a, int b)
     {
@@ -42,6 +45,7 @@ public class IntList
         if (OutOfRange(index)) throw new IndexOutOfRangeException("Setting Index was " + index + ", Count was " + Count);
         _arrayAccesses++;
         _elements[index] = value;
+        _commands.Add(new SetIndexToValueCommand(index, value));
     }
     private bool OutOfRange(int index) => index < 0 || index >= Count;
 

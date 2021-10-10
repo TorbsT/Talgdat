@@ -11,10 +11,16 @@ public class Core
 
     public Core()
     {
-        _list = IntList.GenerateRandom(1, 11, 19);
+        
+        
+    }
+    public void Restart()
+    {
+        _list = IntList.GenerateRandom(1, 1100, 1900);
+    }
+    public void Solve()
+    {
         QuickSort sort = new QuickSort();
-        Debug.Log(_list);
         sort.Sort(_list);
-        Debug.Log(_list);
     }
 }

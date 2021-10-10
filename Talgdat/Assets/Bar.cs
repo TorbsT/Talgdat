@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bar : MonoBehaviour
 {
-    public int value { set { _value = value; } }
+    public int value { set { _value = value; UpdateTransform(); } }
     public float pos { set { _pos = value; } }
     private int _value;
     private float _pos;
@@ -18,16 +18,10 @@ public class Bar : MonoBehaviour
         _currentValue = 0f;
         UpdateTransform();
     }
-    private void Update()
-    {
-        _currentValue = Mathf.Lerp(_currentValue, _value, 0.2f);
-        _currentPos = Mathf.Lerp(_currentPos, _pos, 0.2f);
-        UpdateTransform();
-    }
 
     private void UpdateTransform()
     {
-        transform.localPosition = new Vector3(_currentPos, _currentValue/2f, 0f);
-        transform.localScale = new Vector3(1f, _currentValue, 1f);
+        transform.localPosition = new Vector3(_pos, _value/2f, 0f);
+        transform.localScale = new Vector3(1f, _value, 1f);
     }
 }
