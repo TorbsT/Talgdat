@@ -11,6 +11,7 @@ public class IntList
         get => get(index);
         set { set(index, value); }
     }
+    public List<int> elements { get => _elements; }
     public int Count { get => _elements.Count; }
 
     private List<int> _elements;
