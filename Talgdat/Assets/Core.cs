@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Jobs;
 
 public class Core
 {
@@ -16,11 +17,13 @@ public class Core
     }
     public void Restart()
     {
-        _list = IntList.GenerateRandom(1, 1100, 1900);
+        _list = IntList.GenerateRandom(1, 10, 7);
     }
     public void Solve()
     {
-        QuickSort sort = new QuickSort();
-        sort.Sort(_list);
+        BogoSort sort = new BogoSort(_list);
+        Debug.Log(_list);
+        sort.Sort();
+        Debug.Log(_list);
     }
 }

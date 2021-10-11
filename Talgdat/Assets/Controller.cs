@@ -34,6 +34,7 @@ public class Controller
         {
             _timeSinceLastDisplay = Time.time - _lastDisplayTime;
             List<SetIndexToValueCommand> commands = _core.list.commands;
+            if (_replayIndex >= commands.Count) return;
             int barIndex = commands[_replayIndex].index;
             int barValue = commands[_replayIndex].value;
 
@@ -43,7 +44,7 @@ public class Controller
 
             _replayIndex++;
             _lastDisplayTime = Time.time;
-            if (_replayIndex >= _core.list.commands.Count) _replayIndex = 0;
+            //if (_replayIndex >= commands.Count) _replayIndex = 0;
         }
     }
     public void FixedUpdate()
