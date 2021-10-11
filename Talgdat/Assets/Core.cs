@@ -17,13 +17,13 @@ public class Core
     }
     public void Restart()
     {
-        _list = IntList.GenerateRandom(1, 1080, 1920);
+        _list = IntList.GenerateRandom(1, 10, 7);
     }
     public void Solve()
     {
-        QuickSort sort = new QuickSort();
+        BogoSort sort = new BogoSort(_list);
         Debug.Log(_list);
-        sort.Sort(_list);
+        sort.Sort();
         Debug.Log(_list);
     }
 }

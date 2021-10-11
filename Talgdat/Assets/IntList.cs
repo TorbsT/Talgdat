@@ -4,7 +4,7 @@ using System;
 
 public class IntList
 {
-    public List<Command> commands { get => _commands; }
+    public List<SetIndexToValueCommand> commands { get => _commands; }
     public int arrayAccesses { get => _arrayAccesses; }
     public int swaps { get => _swaps; }
     public int this[int index]
@@ -16,33 +16,29 @@ public class IntList
     public int Count { get => _elements.Count; }
 
     private List<int> _elements;
-    private List<Command> _commands;
+    private List<SetIndexToValueCommand> _commands;
     private int _arrayAccesses;
     private int _swaps;
 
     public IntList()
     {
         _elements = new List<int>();
-        _commands = new List<Command>();
+        _commands = new List<SetIndexToValueCommand>();
     }
     public void Swap(int a, int b)
     {
         if (OutOfRange(a) || OutOfRange(b)) throw new IndexOutOfRangeException("Swapping Indexes " + a + " & " + b + ", Count was " + Count);
         _swaps++;
-        int aValue = _elements[a];
-        int bValue = _elements[b];
-        _elements[a] = bValue;
-        _elements[b] = aValue;
-        _commands.Add(new SwapCommand(a, aValue, b, bValue));
+        int temp = get(a);
+        set(a, get(b));
+        set(b, temp);
     }
 
     private int get(int index)
     {
         if (OutOfRange(index)) throw new IndexOutOfRangeException("Getting Index was " + index + ", Count was " + Count);
         _arrayAccesses++;
-        int value = _elements[index];
-        _commands.Add(new ReadIndexCommand(index, value));
-        return value;
+        return _elements[index];
     }
     private void set(int index, int value)
     {

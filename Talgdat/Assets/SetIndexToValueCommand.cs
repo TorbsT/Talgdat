@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public struct SetIndexToValueCommand : Command
+public struct SetIndexToValueCommand
 {
     public int index { get => _index; }
     public int value { get => _value; }
