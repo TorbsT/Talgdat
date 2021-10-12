@@ -7,7 +7,6 @@ public class Core
 {
     public IntList list { get => _list; }
 
-    public const int Seed = 123;
     private IntList _list;
 
     public Core()
@@ -17,7 +16,8 @@ public class Core
     }
     public void Restart()
     {
-        _list = IntList.GenerateRandom(1, 1080, 1920);
+        ProblemConfig config = Talgdat.ProblemConfig;
+        _list = IntList.GenerateRandom(config.Min, config.Max, config.Count, config.Seed);
     }
     public void Solve()
     {

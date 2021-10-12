@@ -54,10 +54,10 @@ public class IntList
     private bool OutOfRange(int index) => index < 0 || index >= Count;
 
 
-    public static IntList GenerateRandom(int min, int max, int count)
+    public static IntList GenerateRandom(int min, int max, int count, int seed)
     {
         IntList list = new IntList();
-        Random r = new Random(Core.Seed);
+        Random r = new Random(seed);
         for (int i = 0; i < count; i++)
         {
             list._elements.Add(r.Next(min, max + 1));
