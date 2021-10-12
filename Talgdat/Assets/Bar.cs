@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class Bar : MonoBehaviour
 {
+    private const float camWidth = 16f;
+    private const float camHeight = 9f;
     public AudioSource AudioSource { get => _audioSource; }
-    public int value { set { _value = value; UpdateTransform(); } }
+    public float value { set { _value = value; UpdateTransform(); } }
     public float index { set { _index = value; UpdateTransform(); } }
-    private int _value;
+    private float _value;
     private float _index;
 
     private float _currentValue;
     private float _currentPos;
     private AudioSource _audioSource;
-    private MeshRenderer _renderer;
     [SerializeField] private Material _initialMat;
     [SerializeField] private Material _readMat;
     [SerializeField] private Material _writeMat;
+    [SerializeField] private MeshRenderer _renderer;
     private void Start()
     {
-        _renderer = GetComponent<MeshRenderer>();
         _audioSource = GetComponent<AudioSource>();
         _currentPos = 0f;
         _currentValue = 0f;
@@ -41,7 +42,9 @@ public class Bar : MonoBehaviour
     }
     private void UpdateTransform()
     {
-        transform.localPosition = new Vector3(_index, _value/2f, 0f);
-        transform.localScale = new Vector3(1f, _value, 1f);
+        float barWidth = camWidth / Talgdat.ProblemConfig.Count;
+        float barHeight = _value*camHeight / Talgdat.ProblemConfig.Max;
+        transform.localPosition = new Vector3(_index*barWidth, barHeight/2f, 0f);
+        transform.localScale = new Vector3(barWidth, barHeight, 1f);
     }
 }

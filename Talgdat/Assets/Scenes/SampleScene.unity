@@ -267,7 +267,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -292,7 +292,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 937.85, y: 550.4, z: -956.88434}
+  m_LocalPosition: {x: 7.5, y: 4.2, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -391,7 +391,13 @@ MonoBehaviour:
   _controller:
     id: 0
   _barPrefab: {fileID: 5054397220063749110, guid: f981253385c84b54a8ab8c455673dc06, type: 3}
-  _uiDelay: 0
+  _problemConfig:
+    Seed: 1234
+    Min: 1
+    Max: 4096
+    Count: 16
+    visualSortTime: 60
+    UnmarkQueueSize: 2
   references:
     version: 1
     00000000:

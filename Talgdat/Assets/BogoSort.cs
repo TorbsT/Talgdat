@@ -9,7 +9,7 @@ public class BogoSort
     public BogoSort(IntList list)
     {
         this.list = list;
-        rd = new Random(Core.Seed);
+        
     }
 
     public void Sort()
