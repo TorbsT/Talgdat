@@ -1,0 +1,32 @@
+FUNCTIONS:
+Function<Domain, Codomain>
+CompareFunction<Element> : Function<Element, int> where Element : ComparableElement
+
+COLLECTIONS:
+TCollection<Element>
+TList<Element> : Collection<Element>
+TStack<Element> : Collection<Element>
+TQueue<Element> : Collection<Element>
+
+ELEMENTS:
+ComparableElement
+IntElement : ComparableElement
+FloatElement : ComparableElement
+StringElement : ComparableElement
+
+ALGORITHMS:
+Algorithm<Domain, Codomain>
+EndomorphicAlgorithm<Domain> : Algorithm<Domain, Domain>
+SortAlgorithm<Element, Func, Collection> : EndomorphicAlgorithm<Collection> where Element : ComparableElement where Func : CompareFunction<Element> where Collection : TCollection<Element>
+
+CountingSort<Element, Func, Collection> : SortAlgorithm<Element, Func, Collection> where Element : ComparableElement where Func : CompareFunction<Element> where Collection : TCollection<Element>
+
+ComparisonBasedSortAlgorithm<Element, Func, Collection> : SortAlgorithm<Element, Func, Collection> where Element : ComparableElement where Func : CompareFunction<Element> where Collection : TCollection<Element>
+
+// quicksort only works for lists
+QuickSort<Element, Func> : ComparisonBasedSortAlgorithm<Element, Func, TList<Element>> where Element : ComparableElement where Func : CompareFunction<Element>
+BogoSort<Element, Func> : ComparisonBasedSortAlgorithm<Element, Func, TList<Element>> where Element : ComparableElement where Func : CompareFunction<Element>
+
+
+Rejected:
+Generic classes are invariant, so this setup does not work

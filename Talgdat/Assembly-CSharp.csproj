@@ -55,22 +55,50 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Talgdat.cs" />
     <Compile Include="Assets\Controller.cs" />
+    <Compile Include="Assets\Scripts\Core\Core.cs" />
     <Compile Include="Assets\ISortAlgorithm.cs" />
+    <Compile Include="Assets\Scripts\ReadIndexCommand.cs" />
+    <Compile Include="Assets\Scripts\ProblemConfig.cs" />
+    <Compile Include="Assets\Scripts\Core\Algorithms\Algorithm.cs" />
     <Compile Include="Assets\IntList.cs" />
+    <Compile Include="Assets\Command.cs" />
+    <Compile Include="Assets\Scripts\Core\Algorithms\ComparisonBasedSortAlgorithm.cs" />
+    <Compile Include="Assets\Scripts\Core\Collections\IntList.cs" />
+    <Compile Include="Assets\Scripts\Command.cs" />
     <Compile Include="Assets\Element.cs" />
+    <Compile Include="Assets\Scripts\Core\Elements\ComparableElement.cs" />
+    <Compile Include="Assets\Scripts\Core\Algorithms\EndomorphicAlgorithm.cs" />
     <Compile Include="Assets\Tlist.cs" />
+    <Compile Include="Assets\Scripts\Core\Elements\IStringableElement.cs" />
+    <Compile Include="Assets\Scripts\Core\Functions\IntComparator.cs" />
+    <Compile Include="Assets\Scripts\Core\Algorithms\BogoSort.cs" />
+    <Compile Include="Assets\Scripts\Core\Algorithms\SortAlgorithm.cs" />
+    <Compile Include="Assets\Scripts\Controller.cs" />
+    <Compile Include="Assets\Scripts\Core\Elements\IntElement.cs" />
+    <Compile Include="Assets\ReadIndexCommand.cs" />
+    <Compile Include="Assets\Test.cs" />
+    <Compile Include="Assets\Scripts\Visual\IntListSortView.cs" />
+    <Compile Include="Assets\SwapCommand.cs" />
+    <Compile Include="Assets\Scripts\Core\Collections\TList.cs" />
     <Compile Include="Assets\SetIndexToValueCommand.cs" />
     <Compile Include="Assets\Bar.cs" />
+    <Compile Include="Assets\Scripts\Visual\Bar.cs" />
+    <Compile Include="Assets\Scripts\Core\Algorithms\CountingSort.cs" />
+    <Compile Include="Assets\Scripts\SetIndexToValueCommand.cs" />
+    <Compile Include="Assets\Scripts\Core\Elements\StringElement.cs" />
     <Compile Include="Assets\BogoSort.cs" />
     <Compile Include="Assets\Core.cs" />
+    <Compile Include="Assets\Scripts\Core\Algorithms\QuickSort.cs" />
     <Compile Include="Assets\QuickSort.cs" />
+    <Compile Include="Assets\Scripts\Core\Functions\CompareFunction.cs" />
+    <Compile Include="Assets\Scripts\SwapCommand.cs" />
+    <Compile Include="Assets\Scripts\Core\Collections\TCollection.cs" />
     <Compile Include="Assets\Talgdat.cs" />
-    <Compile Include="Assets\ReadIndexCommand.cs" />
-    <Compile Include="Assets\Command.cs" />
-    <Compile Include="Assets\SwapCommand.cs" />
   </ItemGroup>
   <ItemGroup>
+     <None Include="Assets\Lore\rejectedAlgorithmArchitecture.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.1.1f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
