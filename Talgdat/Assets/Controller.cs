@@ -12,6 +12,7 @@ public class Controller
     private float _lastDisplayTime;
     [SerializeField] private float _timeSinceLastDisplay;
     private Queue<Bar> _unmarkQueue = new Queue<Bar>();
+    private int _activeMarks;
     private List<Command> _commands;
 
     private float _lastFrameTime;
@@ -94,12 +95,14 @@ public class Controller
     private void Mark(int index, string tag)
     {
         Bar bar = _bars[index];
+        if (bar.ActiveWrites == 0) _activeMarks++;
         bar.Mark(tag);
         _unmarkQueue.Enqueue(bar);
-        if (_unmarkQueue.Count > Talgdat.ProblemConfig.UnmarkQueueSize)
+        if (_activeMarks > Talgdat.ProblemConfig.UnmarkQueueSize)
         {
             Bar b = _unmarkQueue.Dequeue();
             b.Unmark();
+            if (bar.ActiveWrites == 0) _activeMarks--;
         }
     }
     private void PlaySound(int index, float pitch)

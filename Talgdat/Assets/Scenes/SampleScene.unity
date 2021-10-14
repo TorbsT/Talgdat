@@ -395,9 +395,9 @@ MonoBehaviour:
     Seed: 1234
     Min: 1
     Max: 4096
-    Count: 16
-    visualSortTime: 60
-    UnmarkQueueSize: 2
+    Count: 100
+    visualSortTime: 120
+    UnmarkQueueSize: 4
   references:
     version: 1
     00000000:

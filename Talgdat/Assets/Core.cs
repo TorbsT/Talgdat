@@ -22,8 +22,6 @@ public class Core
     public void Solve()
     {
         QuickSort sort = new QuickSort();
-        Debug.Log(_list);
         sort.Sort(_list);
-        Debug.Log(_list);
     }
 }

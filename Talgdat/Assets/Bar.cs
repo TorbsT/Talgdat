@@ -9,8 +9,10 @@ public class Bar : MonoBehaviour
     public AudioSource AudioSource { get => _audioSource; }
     public float value { set { _value = value; UpdateTransform(); } }
     public float index { set { _index = value; UpdateTransform(); } }
+    public int ActiveWrites { get => _activeWrites; }
     private float _value;
     private float _index;
+    private int _activeWrites;
 
     private float _currentValue;
     private float _currentPos;
@@ -31,10 +33,12 @@ public class Bar : MonoBehaviour
     {
         if (tag == "read") SetMaterial(_readMat);
         if (tag == "write") SetMaterial(_writeMat);
+        _activeWrites++;
     }
     public void Unmark()
     {
-        SetMaterial(_initialMat);
+        if (_activeWrites > 0) _activeWrites--;
+        if (_activeWrites <= 0) SetMaterial(_initialMat);
     }
     private void SetMaterial(Material mat)
     {

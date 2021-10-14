@@ -62,6 +62,7 @@
     <Compile Include="Assets\Element.cs" />
     <Compile Include="Assets\Tlist.cs" />
     <Compile Include="Assets\ReadIndexCommand.cs" />
+    <Compile Include="Assets\ProblemConfig.cs" />
     <Compile Include="Assets\SwapCommand.cs" />
     <Compile Include="Assets\SetIndexToValueCommand.cs" />
     <Compile Include="Assets\Bar.cs" />
@@ -69,7 +70,6 @@
     <Compile Include="Assets\Core.cs" />
     <Compile Include="Assets\QuickSort.cs" />
     <Compile Include="Assets\Talgdat.cs" />
-    <Compile Include="Assets\ProblemConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
