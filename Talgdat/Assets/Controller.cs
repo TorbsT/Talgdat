@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Controller
 {
+    private AudioSource AudioSource { get => Talgdat.AudioSource; }
     public float uiDelay { get => Talgdat.ProblemConfig.visualSortTime / _commands.Count; }
     private Core _core;
     private List<Bar> _bars;
@@ -12,6 +13,7 @@ public class Controller
     private float _lastDisplayTime;
     [SerializeField] private float _timeSinceLastDisplay;
     private Queue<Bar> _unmarkQueue = new Queue<Bar>();
+    private int _activeMarks;
     private List<Command> _commands;
 
     private float _lastFrameTime;
@@ -94,19 +96,23 @@ public class Controller
     private void Mark(int index, string tag)
     {
         Bar bar = _bars[index];
+        if (bar.ActiveWrites == 0) _activeMarks++;
         bar.Mark(tag);
         _unmarkQueue.Enqueue(bar);
-        if (_unmarkQueue.Count > Talgdat.ProblemConfig.UnmarkQueueSize)
+        if (_activeMarks > Talgdat.ProblemConfig.UnmarkQueueSize)
         {
             Bar b = _unmarkQueue.Dequeue();
             b.Unmark();
+            if (bar.ActiveWrites == 0) _activeMarks--;
         }
     }
     private void PlaySound(int index, float pitch)
     {
-        Bar bar = _bars[index];
-        bar.AudioSource.pitch = pitch;
-        bar.AudioSource.Play();
+        //Bar bar = _bars[index];
+        //bar.AudioSource.pitch = pitch;
+        //bar.AudioSource.Play();
+        AudioSource.pitch = pitch;
+        AudioSource.Play();
     }
     public void FixedUpdate()
     {
