@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Controller
 {
+    private AudioSource AudioSource { get => Talgdat.AudioSource; }
     public float uiDelay { get => Talgdat.ProblemConfig.visualSortTime / _commands.Count; }
     private Core _core;
     private List<Bar> _bars;
@@ -107,9 +108,11 @@ public class Controller
     }
     private void PlaySound(int index, float pitch)
     {
-        Bar bar = _bars[index];
-        bar.AudioSource.pitch = pitch;
-        bar.AudioSource.Play();
+        //Bar bar = _bars[index];
+        //bar.AudioSource.pitch = pitch;
+        //bar.AudioSource.Play();
+        AudioSource.pitch = pitch;
+        AudioSource.Play();
     }
     public void FixedUpdate()
     {
