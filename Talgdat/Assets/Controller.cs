@@ -18,8 +18,13 @@ public class Controller
 
     private float _lastFrameTime;
     private float _timeSinceLastFrame;
+    private bool _active;
 
     public Controller()
+    {
+
+    }
+    public void StartButtonClicked()
     {
         _core = new Core();
 
@@ -35,9 +40,11 @@ public class Controller
         }
 
         _core.Solve();
+        _active = true;
     }
     public void Update()
     {
+        if (!_active) return;
         _commands = _core.list.commands;
         int counter = 0;
         _timeSinceLastFrame = Time.time - _lastFrameTime;
