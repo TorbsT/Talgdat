@@ -6,7 +6,7 @@ using UnityEngine;
 public class Controller
 {
     private AudioSource AudioSource { get => Talgdat.AudioSource; }
-    public float uiDelay { get => Talgdat.ProblemConfig.visualSortTime / _commands.Count; }
+    public float uiDelay { get => _config.VisualSortTime / _commands.Count; }
     private Core _core;
     private List<Bar> _bars;
     [SerializeField] private int _replayIndex;
@@ -15,6 +15,7 @@ public class Controller
     private Queue<Bar> _unmarkQueue = new Queue<Bar>();
     private int _activeMarks;
     private List<Command> _commands;
+    private ProblemConfig _config;
 
     private float _lastFrameTime;
     private float _timeSinceLastFrame;
@@ -28,7 +29,20 @@ public class Controller
     {
         _core = new Core();
 
-        _core.Restart();
+        _config = new ProblemConfig
+        {
+            Algorithm = Talgdat.Instance.ChosenAlgorithm,
+            Seed = Talgdat.Instance.ChosenSeed,
+            Min = Talgdat.Instance.ChosenMin,
+            Max = Talgdat.Instance.ChosenMax,
+            Count = Talgdat.Instance.ChosenCount,
+
+            VisualSortTime = Talgdat.Instance.ChosenVisualTime,
+            UnmarkQueueSize = Talgdat.Instance.ChosenMarkSize
+        };
+
+        _core.Restart(_config);
+        Debug.Log(_config);
         _bars = new List<Bar>();
         for (int i = 0; i < _core.list.Count; i++)
         {
@@ -41,6 +55,7 @@ public class Controller
 
         _core.Solve();
         _active = true;
+        _lastFrameTime = Time.time;
     }
     public void Update()
     {
@@ -106,7 +121,7 @@ public class Controller
         if (bar.ActiveWrites == 0) _activeMarks++;
         bar.Mark(tag);
         _unmarkQueue.Enqueue(bar);
-        if (_activeMarks > Talgdat.ProblemConfig.UnmarkQueueSize)
+        if (_activeMarks > _config.UnmarkQueueSize)
         {
             Bar b = _unmarkQueue.Dequeue();
             b.Unmark();

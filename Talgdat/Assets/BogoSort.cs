@@ -1,26 +1,28 @@
 ﻿using System;
 
-public class BogoSort
+public class BogoSort : ISortAlgorithm
 {
+    public const string Name = "BogoSort";
     private static int maxTrials = 10000;
     private int trials;
     private Random rd;
     private IntList list;
-    public BogoSort(IntList list)
+    public BogoSort()
     {
-        this.list = list;
         
     }
 
-    public void Sort()
+    public void Sort(IntList list)
     {
-        while (!isSorted(list) && trials < maxTrials)
+        this.list = list;
+        rd = new Random(1);
+        while (!isSorted() && trials < maxTrials)
         {
-            shuffle(list);
+            shuffle();
             trials++;
         }
     }
-    private void shuffle(IntList list)
+    private void shuffle()
     {
         for (int i = 0; i < list.Count-1; i++)
         {
@@ -28,7 +30,7 @@ public class BogoSort
             if (i != j) list.Swap(i, j);
         }
     }
-    private bool isSorted(IntList list)
+    private bool isSorted()
     {
         int prevValue = list[0];
         for (int i = 1; i < list.Count; i++)

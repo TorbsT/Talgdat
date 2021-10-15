@@ -46,8 +46,8 @@ public class Bar : MonoBehaviour
     }
     private void UpdateTransform()
     {
-        float barWidth = camWidth / Talgdat.ProblemConfig.Count;
-        float barHeight = _value*camHeight / Talgdat.ProblemConfig.Max;
+        float barWidth = camWidth / ProblemConfig.Instance.Count;
+        float barHeight = _value*camHeight / ProblemConfig.Instance.Max;
         transform.localPosition = new Vector3(_index*barWidth, barHeight/2f, 0f);
         transform.localScale = new Vector3(barWidth, barHeight, 1f);
     }

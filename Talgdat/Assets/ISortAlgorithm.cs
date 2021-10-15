@@ -1,5 +1,5 @@
 ﻿using System;
-public interface ISortAlgorithm<Element> where Element : global::Element
+public interface ISortAlgorithm
 {
-    void Sort(Tlist<Element> tlist, Predicate<Element> predicate);
+    void Sort(IntList list);
 }
