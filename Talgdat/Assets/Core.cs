@@ -1,27 +1,45 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using Unity.Jobs;
+using System;
 
 public class Core
 {
+    private static List<ISortAlgorithm> _sortAlgorithms = new List<ISortAlgorithm>
+    {
+
+    };
+
     public IntList list { get => _list; }
 
     private IntList _list;
+    private ProblemConfig _config;
 
     public Core()
     {
         
         
     }
-    public void Restart()
+    public void Restart(ProblemConfig config)
     {
-        ProblemConfig config = Talgdat.ProblemConfig;
+        _config = config;
         _list = IntList.GenerateRandom(config.Min, config.Max, config.Count, config.Seed);
     }
     public void Solve()
     {
-        QuickSort sort = new QuickSort();
-        sort.Sort(_list);
+        ISortAlgorithm alg = null;
+        if (algorithmNameMatches(QuickSort.Name)) alg = new QuickSort();
+        else if (algorithmNameMatches(BogoSort.Name)) alg = new BogoSort();
+        if (alg == null) throw new InvalidOperationException("Found no algoritm with name " + _config.Algorithm);
+        alg.Sort(_list);
     }
+    public static List<ISortAlgorithm> CopySortAlgorithms()
+    {
+        List<ISortAlgorithm> result = new List<ISortAlgorithm>();
+        foreach (ISortAlgorithm a in _sortAlgorithms)
+        {
+            result.Add(a);
+        }
+        return result;
+    }
+    private bool algorithmNameMatches(string s) => _config.Algorithm.Equals(s);
 }

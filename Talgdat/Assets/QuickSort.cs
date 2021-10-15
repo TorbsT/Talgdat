@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuickSort
+public class QuickSort : ISortAlgorithm
 {
+    public const string Name = "QuickSort";
     private bool _done;
 
     public QuickSort()
     {
        
     }
-
     public void Sort(IntList list)
     {
         Sort(list, 0, list.Count-1);
