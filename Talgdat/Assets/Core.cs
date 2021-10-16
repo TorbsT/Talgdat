@@ -23,6 +23,7 @@ public class Core
     {
         _config = config;
         _list = IntList.GenerateRandom(config.Min, config.Max, config.Count, config.Seed);
+        _list.LockInput();
     }
     public void Solve()
     {
