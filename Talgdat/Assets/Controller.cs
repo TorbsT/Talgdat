@@ -8,7 +8,7 @@ public class Controller
     private AudioSource AudioSource { get => Talgdat.AudioSource; }
     public float uiDelay { get => _config.VisualSortTime / _commands.Count; }
     private Core _core;
-    private List<Bar> _bars;
+    private List<Bar> _bars = new List<Bar>();
     [SerializeField] private int _replayIndex;
     private float _lastDisplayTime;
     [SerializeField] private float _timeSinceLastDisplay;
@@ -27,6 +27,16 @@ public class Controller
     }
     public void StartButtonClicked()
     {
+        // START reset previous stuff
+        foreach (Bar bar in _bars)
+        {
+            BarPool.Instance.Enpool(bar);
+        }
+        _bars = new List<Bar>();
+        _unmarkQueue = new Queue<Bar>();
+        _activeMarks = 0;
+        // END
+
         _core = new Core();
 
         _config = new ProblemConfig
@@ -47,7 +57,7 @@ public class Controller
         for (int i = 0; i < _core.list.Count; i++)
         {
             int value = _core.list[i];
-            Bar bar = GameObject.Instantiate(Talgdat.BarPrefab).GetComponent<Bar>();
+            Bar bar = BarPool.Instance.Depool();
             bar.index = i;
             bar.value = value;
             _bars.Add(bar);

@@ -69,6 +69,9 @@
     <Compile Include="Assets\Core.cs" />
     <Compile Include="Assets\QuickSort.cs" />
     <Compile Include="Assets\Talgdat.cs" />
+    <Compile Include="Assets\Pool.cs" />
+    <Compile Include="Assets\IPoolable.cs" />
+    <Compile Include="Assets\Scripts\Pools\BarPool.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

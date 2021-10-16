@@ -20,10 +20,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 781, y: 421}
-  m_MaxSize: {x: 16006, y: 8021}
+  m_MinSize: {x: 781, y: 442}
+  m_MaxSize: {x: 16006, y: 8042}
   vertical: 1
-  controlID: 3631
+  controlID: 3751
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -136,10 +136,10 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 947
-  m_MinSize: {x: 781, y: 421}
-  m_MaxSize: {x: 16006, y: 8021}
+  m_MinSize: {x: 781, y: 442}
+  m_MaxSize: {x: 16006, y: 8042}
   vertical: 0
-  controlID: 3632
+  controlID: 3752
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -196,7 +196,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 62fbffff
+      m_ExpandedIDs: 0afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -241,10 +241,10 @@ MonoBehaviour:
     y: 0
     width: 847
     height: 947
-  m_MinSize: {x: 202, y: 421}
-  m_MaxSize: {x: 4002, y: 8021}
+  m_MinSize: {x: 202, y: 442}
+  m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 3633
+  controlID: 3753
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -568,21 +568,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts/Pools
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scripts/Pools
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\torbs\Desktop\gitshit\Talgdat\Talgdat
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 32380000
-    m_LastClickedID: 14386
-    m_ExpandedIDs: 000000003238000000ca9a3b
+    m_SelectedIDs: dc3d0000
+    m_LastClickedID: 15836
+    m_ExpandedIDs: 00000000d038000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -610,7 +610,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000003238000000ca9a3b
+    m_ExpandedIDs: 00000000d038000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -635,8 +635,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: c6370000
+    m_LastClickedInstanceID: 14278
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300001a4b0000c2430000be45000072480000d250000000000000ec420000304300007e440000
     m_RenameOverlay:
@@ -1320,7 +1320,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 13990
+  m_LastSelectedObjectID: 14278
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1380,7 +1380,7 @@ MonoBehaviour:
     m_CachedPref: -160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -1
+  m_LastInspectedObjectInstanceID: 14278
   m_LastVerticalScrollValue: 0
   m_AssetGUID: 
   m_InstanceID: 0

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bar : MonoBehaviour
+public class Bar : MonoBehaviour, IPoolable
 {
     private const float camWidth = 16f;
     private const float camHeight = 9f;
@@ -10,6 +10,20 @@ public class Bar : MonoBehaviour
     public float value { set { _value = value; UpdateTransform(); } }
     public float index { set { _index = value; UpdateTransform(); } }
     public int ActiveWrites { get => _activeWrites; }
+    public bool pooled { get => _pooled; set
+        {
+            _pooled = value;
+            gameObject.SetActive(!_pooled);
+
+            if (_pooled)
+            {
+                _activeWrites = 0;
+                Unmark();
+            }
+
+        } }
+
+    private bool _pooled;
     private float _value;
     private float _index;
     private int _activeWrites;

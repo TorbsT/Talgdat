@@ -1416,6 +1416,7 @@ GameObject:
   - component: {fileID: 2145029308}
   - component: {fileID: 2145029307}
   - component: {fileID: 2145029309}
+  - component: {fileID: 2145029310}
   m_Layer: 0
   m_Name: Talgdat
   m_TagString: Untagged
@@ -1439,11 +1440,12 @@ MonoBehaviour:
     id: 0
   _barPrefab: {fileID: 5054397220063749110, guid: f981253385c84b54a8ab8c455673dc06, type: 3}
   _problemConfig:
+    Algorithm: undefined
     Seed: 1234
     Min: 1
     Max: 256
     Count: 100
-    visualSortTime: 30
+    VisualSortTime: 10
     UnmarkQueueSize: 4
   _algorithmDropdown: {fileID: 1801814699}
   _seedField: {fileID: 1497155582}
@@ -1567,3 +1569,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2145029310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145029306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c1f061652e4c2479ffd1504aa66676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 5054397220063749110, guid: f981253385c84b54a8ab8c455673dc06, type: 3}
