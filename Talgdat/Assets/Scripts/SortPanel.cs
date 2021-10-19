@@ -30,6 +30,7 @@ public class SortPanel : MonoBehaviour
     {
         HeapSort.Name,
         QuickSort.Name,
+        OptimizedBogoSort.Name,
         BogoSort.Name,
     };
 

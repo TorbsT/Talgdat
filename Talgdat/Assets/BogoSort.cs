@@ -24,11 +24,7 @@ public class BogoSort : ISortAlgorithm
     }
     private void shuffle()
     {
-        for (int i = 0; i < list.Count-1; i++)
-        {
-            int j = rd.Next(i, list.Count);
-            if (i != j) list.Swap(i, j);
-        }
+        Shuffle(list, 0, list.Count - 1, rd);
     }
     private bool isSorted()
     {
@@ -40,5 +36,13 @@ public class BogoSort : ISortAlgorithm
             prevValue = value;
         }
         return true;
+    }
+    public static void Shuffle(IntList list, int low, int high, Random rd)
+    {
+        for (int i = low; i < high; i++)
+        {
+            int j = rd.Next(i, high+1);
+            if (i != j) list.Swap(i, j);
+        }
     }
 }
