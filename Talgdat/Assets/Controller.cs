@@ -18,28 +18,24 @@ public class Controller
     private List<Command> _commands;
     private ProblemConfig _config;
 
+    private SortPanel _sortPanel;
+
     private SortView _sortView;
     private float _lastFrameTime;
     private float _timeSinceLastFrame;
     public Controller()
     {
         Instance = this;
+        _sortPanel = Talgdat.Instance.SortPanel;
     }
-    public void StartButtonClicked()
+    public void StartSortView(ProblemConfig config)
     {
+        _config = config;
+        _sortPanel.Hide();
+
         _core = new Core();
 
-        _config = new ProblemConfig
-        {
-            Algorithm = Talgdat.Instance.ChosenAlgorithm,
-            Seed = Talgdat.Instance.ChosenSeed,
-            Min = Talgdat.Instance.ChosenMin,
-            Max = Talgdat.Instance.ChosenMax,
-            Count = Talgdat.Instance.ChosenCount,
 
-            VisualSortTime = Talgdat.Instance.ChosenVisualTime,
-            UnmarkQueueSize = Talgdat.Instance.ChosenMarkSize
-        };
 
         _core.Restart(_config);
         _core.Solve();
@@ -52,6 +48,7 @@ public class Controller
     }
     public void Update()
     {
+        if (Input.GetKeyDown(KeyCode.H)) _sortPanel.Toggle();
         if (_sortView != null) _sortView.Update();
     }
 

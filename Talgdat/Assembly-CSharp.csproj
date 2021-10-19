@@ -55,6 +55,7 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Algorithms\HeapSort.cs" />
     <Compile Include="Assets\IPoolable.cs" />
     <Compile Include="Assets\Scripts\Pools\BarPool.cs" />
     <Compile Include="Assets\Controller.cs" />
@@ -63,8 +64,11 @@
     <Compile Include="Assets\IntList.cs" />
     <Compile Include="Assets\Command.cs" />
     <Compile Include="Assets\Element.cs" />
+    <Compile Include="Assets\Scripts\Algorithms\OptimizedBogoSort.cs" />
+    <Compile Include="Assets\Scripts\SortView.cs" />
     <Compile Include="Assets\ReadIndexCommand.cs" />
     <Compile Include="Assets\ProblemConfig.cs" />
+    <Compile Include="Assets\Scripts\SortPanel.cs" />
     <Compile Include="Assets\SwapCommand.cs" />
     <Compile Include="Assets\SetIndexToValueCommand.cs" />
     <Compile Include="Assets\Bar.cs" />
@@ -72,7 +76,7 @@
     <Compile Include="Assets\Core.cs" />
     <Compile Include="Assets\QuickSort.cs" />
     <Compile Include="Assets\Talgdat.cs" />
-    <Compile Include="Assets\Scripts\SortView.cs" />
+    <Compile Include="Assets\Scripts\Algorithms\MergeSort.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

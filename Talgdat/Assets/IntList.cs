@@ -12,7 +12,7 @@ public class IntList
         get => get(index);
         set { set(index, value); }
     }
-    public int Count { get => _output.Count; }
+    public int Count { get { if (_inputLocked) return _output.Count; else return _input.Count; } }
 
     private List<int> _input;
     private List<int> _output;
@@ -26,6 +26,11 @@ public class IntList
         _input = new List<int>();
         _commands = new List<Command>();
     }
+    public void Add(int n)
+    {
+        if (_inputLocked) _output.Add(n);
+        else _input.Add(n);
+    } 
     public void Swap(int a, int b)
     {
         if (OutOfRange(a) || OutOfRange(b)) throw new IndexOutOfRangeException("Swapping Indexes " + a + " & " + b + ", Count was " + Count);

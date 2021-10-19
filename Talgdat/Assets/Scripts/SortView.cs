@@ -95,7 +95,8 @@ public class SortView
         else if (command is ReadIndexCommand readCommand)
         {
             int index = readCommand.index;
-            float pitch = readCommand.value / 1080f + 0.5f;
+            float relative = (float)readCommand.value / (_config.Max - _config.Min);
+            float pitch = relative + 0.5f;//(relative + 0.5f)*5f;
             Mark(index, "read");
             PlaySound(index, pitch);
         }
@@ -121,7 +122,9 @@ public class SortView
         //Bar bar = _bars[index];
         //bar.AudioSource.pitch = pitch;
         //bar.AudioSource.Play();
-        Controller.Instance.AudioSource.pitch = pitch;
-        Controller.Instance.AudioSource.Play();
+        AudioSource src = Controller.Instance.AudioSource;
+        src.pitch = pitch;
+        if (!src.isPlaying) src.Play();
+        //Controller.Instance.AudioSource.Play();
     }
 }
