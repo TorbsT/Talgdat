@@ -30,6 +30,7 @@ public class Core
         ISortAlgorithm alg = null;
         if (algorithmNameMatches(QuickSort.Name)) alg = new QuickSort();
         else if (algorithmNameMatches(BogoSort.Name)) alg = new BogoSort();
+        else if (algorithmNameMatches(HeapSort.Name)) alg = new HeapSort();
         if (alg == null) throw new InvalidOperationException("Found no algoritm with name " + _config.Algorithm);
         alg.Sort(_list);
     }

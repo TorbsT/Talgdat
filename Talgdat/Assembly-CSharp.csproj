@@ -63,8 +63,10 @@
     <Compile Include="Assets\IntList.cs" />
     <Compile Include="Assets\Command.cs" />
     <Compile Include="Assets\Element.cs" />
+    <Compile Include="Assets\Scripts\SortView.cs" />
     <Compile Include="Assets\ReadIndexCommand.cs" />
     <Compile Include="Assets\ProblemConfig.cs" />
+    <Compile Include="Assets\Scripts\SortPanel.cs" />
     <Compile Include="Assets\SwapCommand.cs" />
     <Compile Include="Assets\SetIndexToValueCommand.cs" />
     <Compile Include="Assets\Bar.cs" />
@@ -72,7 +74,7 @@
     <Compile Include="Assets\Core.cs" />
     <Compile Include="Assets\QuickSort.cs" />
     <Compile Include="Assets\Talgdat.cs" />
-    <Compile Include="Assets\Scripts\SortView.cs" />
+    <Compile Include="Assets\Scripts\Algorithms\HeapSort.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
