@@ -28,6 +28,7 @@ public class SortPanel : MonoBehaviour
 
     private List<string> _algorithmChoices = new List<string>
     {
+        MergeSort.Name,
         HeapSort.Name,
         QuickSort.Name,
         OptimizedBogoSort.Name,

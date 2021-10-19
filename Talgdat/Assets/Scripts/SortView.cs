@@ -96,7 +96,7 @@ public class SortView
         {
             int index = readCommand.index;
             float relative = (float)readCommand.value / (_config.Max - _config.Min);
-            float pitch = (relative + 0.5f)*5f;
+            float pitch = relative + 0.5f;//(relative + 0.5f)*5f;
             Mark(index, "read");
             PlaySound(index, pitch);
         }

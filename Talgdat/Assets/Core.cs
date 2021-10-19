@@ -32,6 +32,7 @@ public class Core
         else if (algorithmNameMatches(BogoSort.Name)) alg = new BogoSort();
         else if (algorithmNameMatches(OptimizedBogoSort.Name)) alg = new OptimizedBogoSort();
         else if (algorithmNameMatches(HeapSort.Name)) alg = new HeapSort();
+        else if (algorithmNameMatches(MergeSort.Name)) alg = new MergeSort();
         if (alg == null) throw new InvalidOperationException("Found no algoritm with name " + _config.Algorithm);
         alg.Sort(_list);
     }
