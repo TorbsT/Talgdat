@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - Bar
     - BarPool
+    - SortPanel
     - Talgdat
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -69,7 +70,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11698}
     - Class: 114
-      Script: {instanceID: 11722}
+      Script: {instanceID: 11720}
     - Class: 114
       Script: {instanceID: 11868}
     - Class: 114
@@ -81,21 +82,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12388}
     - Class: 114
-      Script: {instanceID: 12616}
+      Script: {instanceID: 12618}
     - Class: 114
-      Script: {instanceID: 12848}
+      Script: {instanceID: 12852}
     - Class: 114
-      Script: {instanceID: 13062}
+      Script: {instanceID: 13066}
     - Class: 114
-      Script: {instanceID: 13390}
+      Script: {instanceID: 13282}
     - Class: 114
-      Script: {instanceID: 13408}
+      Script: {instanceID: 13396}
     - Class: 114
-      Script: {instanceID: 13766}
+      Script: {instanceID: 13414}
     - Class: 114
-      Script: {instanceID: 13768}
+      Script: {instanceID: 13772}
     - Class: 114
-      Script: {instanceID: 13782}
+      Script: {instanceID: 13774}
+    - Class: 114
+      Script: {instanceID: 13788}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -417,6 +420,12 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+      Hash: 2613de5537b686920dc69db26acb6e78
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SortPanel
+  - hash:
+      serializedVersion: 2
       Hash: 760787567e1b60d64a3e421ab83ee14a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -513,7 +522,7 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: d01818f03c0a2cf50b421e6eaf1a38ce
+      Hash: 0eca0ef47750d2ad2559969ac58eba8e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Talgdat

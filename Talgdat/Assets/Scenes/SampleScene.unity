@@ -213,7 +213,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -38, y: -177}
+  m_AnchoredPosition: {x: -13.399994, y: -166.2}
   m_SizeDelta: {x: 200, y: 90}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &550566413
@@ -342,7 +342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2094898701673933371, guid: b33eb9977aa650a408fbdf51a94aeb81, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -147
+      value: -139.1
       objectReference: {fileID: 0}
     - target: {fileID: 3003767108421798681, guid: b33eb9977aa650a408fbdf51a94aeb81, type: 3}
       propertyPath: m_Name
@@ -706,7 +706,7 @@ GameObject:
   - component: {fileID: 1230293453}
   - component: {fileID: 1230293452}
   m_Layer: 5
-  m_Name: Visual
+  m_Name: VisualCustomization
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1119,7 +1119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2094898701673933371, guid: b33eb9977aa650a408fbdf51a94aeb81, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -200
+      value: -192.1
       objectReference: {fileID: 0}
     - target: {fileID: 3003767108421798681, guid: b33eb9977aa650a408fbdf51a94aeb81, type: 3}
       propertyPath: m_Name
@@ -1304,7 +1304,7 @@ GameObject:
   - component: {fileID: 1890907618}
   - component: {fileID: 1890907617}
   m_Layer: 5
-  m_Name: Problem
+  m_Name: InstanceCustomization
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1326,8 +1326,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 54, y: 206}
-  m_SizeDelta: {x: 300, y: 30}
+  m_AnchoredPosition: {x: 54, y: 189.3}
+  m_SizeDelta: {x: 400, y: 30}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1890907617
 MonoBehaviour:
@@ -1362,7 +1362,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Problem customization
+  m_Text: Sorting problem instance customization
 --- !u!222 &1890907618
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1489,9 +1489,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f1390e720550b214198ab1d200810de7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c9ef946f43d647344a726824174e5fb9, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.01
+  m_Volume: 0.04
   m_Pitch: 1
   Loop: 0
   Mute: 0
