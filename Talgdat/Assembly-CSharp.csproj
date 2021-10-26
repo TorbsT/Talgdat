@@ -56,27 +56,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Algorithms\HeapSort.cs" />
-    <Compile Include="Assets\IPoolable.cs" />
+    <Compile Include="Assets\Scripts\IPoolable.cs" />
     <Compile Include="Assets\Scripts\Pools\BarPool.cs" />
-    <Compile Include="Assets\Controller.cs" />
-    <Compile Include="Assets\ISortAlgorithm.cs" />
-    <Compile Include="Assets\Pool.cs" />
-    <Compile Include="Assets\IntList.cs" />
-    <Compile Include="Assets\Command.cs" />
-    <Compile Include="Assets\Element.cs" />
+    <Compile Include="Assets\Scripts\Controller.cs" />
+    <Compile Include="Assets\Scripts\ISortAlgorithm.cs" />
+    <Compile Include="Assets\Scripts\Pool.cs" />
+    <Compile Include="Assets\Scripts\IntList.cs" />
+    <Compile Include="Assets\Scripts\Element.cs" />
     <Compile Include="Assets\Scripts\Algorithms\OptimizedBogoSort.cs" />
     <Compile Include="Assets\Scripts\SortView.cs" />
-    <Compile Include="Assets\ReadIndexCommand.cs" />
-    <Compile Include="Assets\ProblemConfig.cs" />
-    <Compile Include="Assets\Scripts\SortPanel.cs" />
-    <Compile Include="Assets\SwapCommand.cs" />
-    <Compile Include="Assets\SetIndexToValueCommand.cs" />
-    <Compile Include="Assets\Bar.cs" />
-    <Compile Include="Assets\BogoSort.cs" />
-    <Compile Include="Assets\Core.cs" />
-    <Compile Include="Assets\QuickSort.cs" />
-    <Compile Include="Assets\Talgdat.cs" />
     <Compile Include="Assets\Scripts\Algorithms\MergeSort.cs" />
+    <Compile Include="Assets\Scripts\PositionedNode.cs" />
+    <Compile Include="Assets\Scripts\Commands\ReadIndexCommand.cs" />
+    <Compile Include="Assets\Scripts\ProblemConfig.cs" />
+    <Compile Include="Assets\Scripts\SortPanel.cs" />
+    <Compile Include="Assets\Scripts\Commands\SwapCommand.cs" />
+    <Compile Include="Assets\Scripts\Commands\SetIndexToValueCommand.cs" />
+    <Compile Include="Assets\Scripts\Bar.cs" />
+    <Compile Include="Assets\Scripts\BogoSort.cs" />
+    <Compile Include="Assets\Scripts\Core.cs" />
+    <Compile Include="Assets\Scripts\QuickSort.cs" />
+    <Compile Include="Assets\Scripts\Talgdat.cs" />
+    <Compile Include="Assets\Scripts\Graph.cs" />
+    <Compile Include="Assets\Scripts\Algorithms\ThreeGenFinder.cs" />
+    <Compile Include="Assets\Scripts\Algorithms\IGraphAlgorithm.cs" />
+    <Compile Include="Assets\Scripts\Algorithms\IAlgorithm.cs" />
+    <Compile Include="Assets\Scripts\Data Structures\Node.cs" />
+    <Compile Include="Assets\Scripts\Commands\ReadEdgeCommand.cs" />
+    <Compile Include="Assets\Scripts\Commands\ICommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

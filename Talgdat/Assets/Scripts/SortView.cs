@@ -10,7 +10,7 @@ public class SortView
     private Queue<Bar> _unmarkQueue;
     private List<Bar> _bars;
     private List<int> _startState;
-    private List<Command> _commands;
+    private List<ICommand> _commands;
     private float _lastFrameTime;
     private float _uiDelay;
     private int _replayIndex;
@@ -68,7 +68,7 @@ public class SortView
     private void ShowScreen()
     {
         if (_replayIndex >= _commands.Count) return;
-        Command command = _commands[_replayIndex];
+        ICommand command = _commands[_replayIndex];
         if (command is SetIndexToValueCommand setCommand)
         {
             int barIndex = setCommand.index;
