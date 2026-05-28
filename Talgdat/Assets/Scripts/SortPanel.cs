@@ -15,6 +15,7 @@ public class SortPanel : MonoBehaviour
     public bool Active { get => _active; }
 
     [Header("Problem config objects")]
+    [SerializeField] private List<AlgorithmObject> algorithmObjects;
     [SerializeField] private Dropdown _algorithmDropdown;
     [SerializeField] private Text _seedField;
     [SerializeField] private Text _minField;
@@ -39,6 +40,7 @@ public class SortPanel : MonoBehaviour
     {
         List<Dropdown.OptionData> options = new List<Dropdown.OptionData>();
         foreach (string s in _algorithmChoices) options.Add(new Dropdown.OptionData(s));
+        foreach (var s in algorithmObjects) options.Add(new(s.Name));
         _algorithmDropdown.ClearOptions();
         _algorithmDropdown.AddOptions(options);
     }
